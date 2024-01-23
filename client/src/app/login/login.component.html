@@ -2,8 +2,9 @@
     <article>
         <h1>LOGIN</h1>
         <input [(ngModel)]="username" placeholder="Username" />
+        <label id="username-validator" style="color: red;"></label>
         <input [(ngModel)]="password" placeholder="Password" type="password" />
+        <label id="password-validator" style="color: red;"></label>
         <button type="submit" (mousedown)="login()">Submit</button>
-        <p>{{username}}</p>
     </article>
 </main>

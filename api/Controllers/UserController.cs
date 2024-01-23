@@ -18,7 +18,7 @@ public class UserController : ControllerBase
     public ActionResult<bool> ValidateUser(string username, string password)
     {
         if(username == "admin" 
-            || password == "password")
+            && password == "password")
         {
             return true;
         }

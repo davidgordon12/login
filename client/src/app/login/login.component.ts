@@ -16,9 +16,17 @@ export class LoginComponent {
     password?: string;
 
     validate(): boolean {
-        if(this.username == "" || this.username == undefined) return false;
-        if(this.password == "" || this.password == undefined) return false;
+        if(this.username == "" || this.username == undefined) {
+            document.getElementById("username-validator")!.innerText = "Invalid Username"
+            return false
+        }
+        if(this.password == "" || this.password == undefined) {
+            document.getElementById("password-validator")!.innerText = "Invalid Password"
+            return false
+        }
 
+        document.getElementById("password-validator")!.innerText = ""
+        document.getElementById("password-validator")!.innerText = ""
         return true;
     }
 
@@ -33,6 +41,7 @@ export class LoginComponent {
             password: this.password!,
         }
         
+        console.log(await authenticate(user))
         alert(await authenticate(user) ? "Success" : "Failed")
     }
 }
