@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from '../../models/userModel';
-import { authenticate } from '../../helpers/demo-authenticator';
+import { authenticate } from '../../services/demo-authenticator';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -22,7 +22,7 @@ export class LoginComponent {
         return true;
     }
 
-    login() {
+    async login() {
         if(!this.validate()) {
             alert("Invalid username or password")
             return
@@ -33,6 +33,6 @@ export class LoginComponent {
             password: this.password!,
         }
         
-        alert(authenticate(user) ? "Success" : "Failed")
+        alert(await authenticate(user) ? "Success" : "Failed")
     }
 }
