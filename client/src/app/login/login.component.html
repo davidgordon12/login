@@ -1,0 +1,9 @@
+<main>
+    <article>
+        <h1>LOGIN</h1>
+        <input [(ngModel)]="username" placeholder="Username" />
+        <input [(ngModel)]="password" placeholder="Password" type="password" />
+        <button type="submit" (mousedown)="login()">Submit</button>
+        <p>{{username}}</p>
+    </article>
+</main>
